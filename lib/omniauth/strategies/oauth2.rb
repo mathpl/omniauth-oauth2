@@ -22,7 +22,7 @@ module OmniAuth
 
       option :client_id, nil
       option :client_secret, nil
-      option :client_options, {}
+      option :client_options, {:proxy => ENV['GITHUB_HTTP_PROXY'] ? URI(ENV['GITHUB_HTTP_PROXY']) : nil}
       option :authorize_params, {}
       option :authorize_options, [:scope]
       option :token_params, {}
